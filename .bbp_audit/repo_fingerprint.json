@@ -1,0 +1,48 @@
+{
+  "timestamp_utc": "2026-04-18T02:46:32Z",
+  "commit": "850ce7536a179753812547463df91291ab26ae0a",
+  "current_branch": "work",
+  "default_branch": "unknown",
+  "major_languages": [
+    "PHP",
+    "JavaScript",
+    "TypeScript"
+  ],
+  "frameworks": [
+    "Nextcloud AppFramework",
+    "Symfony Console (occ)"
+  ],
+  "package_managers": [
+    "composer",
+    "npm"
+  ],
+  "dependency_manifests": [
+    "composer.json",
+    "package.json",
+    "apps/*/composer/composer.json"
+  ],
+  "infra_files": [
+    ".devcontainer/docker-compose.yml",
+    ".github/workflows/*.yml",
+    "Dockerfile (devcontainer)"
+  ],
+  "network_entry_points": [
+    "index.php",
+    "public.php",
+    "ocs/v1.php",
+    "ocs/v2.php",
+    "remote.php variants in apps"
+  ],
+  "auth_related_modules": [
+    "lib/private/Authentication",
+    "apps/oauth2",
+    "apps/provisioning_api",
+    "apps/webhook_listeners/lib/Controller/WebhooksController.php"
+  ],
+  "hotspot_hashes": {
+    "apps/webhook_listeners/lib/Controller/WebhooksController.php": "befe2a8dc577b2f2f46968230efaed8bad13b5b2ba0c64dd2711924a90c528c7",
+    "apps/webhook_listeners/lib/Db/WebhookListenerMapper.php": "23c03535732a204a8bcb638f2727ac43bbdb7a18584e7c090a9fd2007cde0b6b",
+    "apps/webhook_listeners/lib/BackgroundJobs/WebhookCall.php": "1680804d0d3b1baef2b3f185630b1180cf6bbeb1f5b0de72c4a1b6c99b8d7638",
+    "apps/webhook_listeners/lib/Service/TokenService.php": "662bd610b3ea0eaf1e84326ed7d254be8f5381bf07e03afefcabbc88f8b55da1"
+  }
+}

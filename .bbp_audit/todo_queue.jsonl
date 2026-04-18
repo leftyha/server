@@ -1,0 +1,2 @@
+{"timestamp_utc": "2026-04-18T02:46:57Z", "priority": 1, "task": "Set up test runtime (composer dev deps) and validate whether tokenNeeded.user_ids can mint usable tokens for arbitrary accounts through webhook trigger path.", "depends_on": ["local Nextcloud test bootstrap", "auth for webhook API"]}
+{"timestamp_utc": "2026-04-18T02:46:57Z", "priority": 2, "task": "Expand attack-surface mapping to core/routes.php and OCS provisioning endpoints for IDOR/BOLA checks."}

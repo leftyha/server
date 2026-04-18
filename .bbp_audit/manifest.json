@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-04-18T02:46:32Z",
+  "last_run_utc": "2026-04-18T02:47:01Z",
+  "status": "active",
+  "files": [
+    "manifest.json",
+    "repo_fingerprint.json",
+    "coverage_map.json",
+    "hypotheses.jsonl",
+    "findings.jsonl",
+    "ruled_out.jsonl",
+    "tested_paths.jsonl",
+    "todo_queue.jsonl",
+    "run_log.md"
+  ]
+}
