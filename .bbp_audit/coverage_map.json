@@ -1,0 +1,59 @@
+{
+  "run_commit": "850ce7536a179753812547463df91291ab26ae0a",
+  "reviewed_components": [
+    {
+      "component": "webhook_listeners OCS API controller",
+      "files": [
+        "apps/webhook_listeners/lib/Controller/WebhooksController.php"
+      ],
+      "attack_surface": [
+        "GET/POST/DELETE OCS endpoints for webhook CRUD"
+      ],
+      "authz_model": "AuthorizedAdminSetting + AppApiAdminAccessWithoutUser attributes"
+    },
+    {
+      "component": "webhook dispatch worker",
+      "files": [
+        "apps/webhook_listeners/lib/BackgroundJobs/WebhookCall.php"
+      ],
+      "attack_surface": [
+        "outbound HTTP request sink via configured webhook uri"
+      ],
+      "sinks": [
+        "IClientService->newClient()->request",
+        "AppAPI PublicFunctions->exAppRequest"
+      ]
+    },
+    {
+      "component": "token issuance path",
+      "files": [
+        "apps/webhook_listeners/lib/Service/TokenService.php"
+      ],
+      "attack_surface": [
+        "ephemeral token generation for configured user_ids/user_roles"
+      ],
+      "sinks": [
+        "IProvider->generateToken"
+      ]
+    },
+    {
+      "component": "webhook persistence mapper",
+      "files": [
+        "apps/webhook_listeners/lib/Db/WebhookListenerMapper.php",
+        "apps/webhook_listeners/lib/Db/WebhookListener.php"
+      ],
+      "attack_surface": [
+        "storage of uri/httpMethod/event filter and auth headers"
+      ],
+      "guards_checked": [
+        "event class must implement IWebhookCompatibleEvent"
+      ]
+    }
+  ],
+  "not_yet_reviewed": [
+    "core routes and legacy controllers",
+    "apps/files_external connectors",
+    "dav invitation/public endpoints"
+  ],
+  "updated_utc": "2026-04-18T02:46:32Z"
+}
